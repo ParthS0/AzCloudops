@@ -1,0 +1,27 @@
+#install openssh client
+
+get-windowscapability -online | where-object Name -like 'openssh*'
+
+#check open ssh server install or not
+
+get-windowscapability -online -name OpenSSH.Server~~~~0.0.1.0
+
+#install Openssh server
+
+Add-windowscapability -online -name 
+
+#get service start auto
+
+get-service -name "sshd" | set-service -startup "automatic" -passthru | start-service -passthru
+
+#now go to this path and open in notepad C:\Windows\System32\OpenSSH
+
+#And change Port for custom
+
+#Open shh config file from this
+%programdata%\ssh\sshd_config
+
+#For check Port Working or Not
+
+get-nettcpconnection -localport 22 | select local*,state,@{n="processname";e={(get-process -id $_.owningprocess).processname}},@{n="processpath";e={(get-process -id $_.owingprocess).path}} | ft -auto
+
