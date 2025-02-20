@@ -1,0 +1,9 @@
+#how to sync local user or AD Connect
+#Watch below two video 
+#this link for add domain in azure or admin centar 365
+https://youtu.be/8XYtk7_e-xg?si=iB9efWOH-2zKP6dI
+#this for connect AD to azure 
+https://youtu.be/EaF8kc98dFU?si=f9z8XAzck7HjSlQJ
+
+#sync local user useing this cmd
+Start-ADSyncSyncCycle -PolicyType Delta
