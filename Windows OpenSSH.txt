@@ -1,3 +1,6 @@
+#for more gudien watch this video
+https://youtu.be/2zgKXHJA8Ro?si=hhxHnUEfT8ykEkeE
+
 #install openssh client
 
 get-windowscapability -online | where-object Name -like 'openssh*'
@@ -25,3 +28,22 @@ get-service -name "sshd" | set-service -startup "automatic" -passthru | start-se
 
 get-nettcpconnection -localport 22 | select local*,state,@{n="processname";e={(get-process -id $_.owningprocess).processname}},@{n="processpath";e={(get-process -id $_.owingprocess).path}} | ft -auto
 
+#this cmd use for if you give some allow or deny user access
+
+#allowuser and denyuser
+Match User ishan
+    ForceCommand internal-sftp
+    ChrootDirectory C:\sftp
+    PermitTunnel no
+    AllowAgentForwarding no
+    AllowTcpForwarding no
+    X11Forwarding no
+    DenyUsers ishan
+ 
+Match User parth
+    ForceCommand internal-sftp
+    ChrootDirectory C:\parth
+    PermitTunnel no
+    AllowAgentForwarding no
+    AllowTcpForwarding no
+    X11Forwarding no
