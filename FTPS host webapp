@@ -1,0 +1,7 @@
+#How to create web app follow this video
+https://learn.microsoft.com/en-us/azure/app-service/quickstart-dotnetcore?tabs=net80&pivots=development-environment-azure-portal 
+#how to add custom domain
+https://youtu.be/MvbCAacLkww?si=as3l5DmMi3J72ihU
+#add ftps or sftp
+
+go to recourse - configuration and enable ftps
