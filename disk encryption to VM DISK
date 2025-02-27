@@ -1,0 +1,13 @@
+first create key vault and give key vault administrator right(by going into IAM AND ACCESS CONTROL)
+
+
+
+1.Get-AzVmDiskEncryptionStatus -ResourceGroupName "WebApp" -VMName "test"
+ 
+2. Set-AzVMDiskEncryptionExtension -ResourceGroupName "WebApp" `
+    -VMName "test" `
+    -DiskEncryptionKeyVaultUrl "https://keysto.vault.azure.net//" `
+    -DiskEncryptionKeyVaultId "/subscriptions/dc9b2343-e432-4146-ad95-56dbc9c69911/resourceGroups/WebApp/providers/Microsoft.KeyVault/vaults/keysto" `
+    -VolumeType "All"
+ 
+3. Restart-AzVM -ResourceGroupName "Testvm1_group" -Name "sqlVM"
