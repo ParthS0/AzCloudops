@@ -1,0 +1,9 @@
+How to create mars in on-premisis
+
+refar this document for more 
+
+https://learn.microsoft.com/en-us/azure/backup/install-mars-agent
+
+and also give all right in recovry vualt and key vualt 
+
+go in identity and system assigned and add then give azure role assignment.
