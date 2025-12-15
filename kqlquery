@@ -1,0 +1,19 @@
+Event
+| where EventLog == "System"
+| where Source == "Service Control Manager"
+| where EventID == 7036
+| where RenderedDescription has "OpenSSH"
+| project TimeGenerated, Computer, EventID, RenderedDescription
+| order by TimeGenerated desc
+
+
+
+
+15/12/2025, 02:24:02.659
+server1.parthshah.com
+7036
+The OpenSSH SSH Server service entered the stopped state.
+15/12/2025, 02:20:51.113
+server1.parthshah.com
+7036
+The OpenSSH SSH Server service entered the running state.
